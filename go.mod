@@ -4,8 +4,8 @@ go 1.27.1
 
 require (
 	github.com/caarlos0/env/v11 v11.4.1
-	github.com/pbrpc/connect-testing v0.3.1
 	github.com/pbrpc/http-transport v0.1.0
+	github.com/pbrpc/testing v0.1.0
 	go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp v0.71.0
 )
 

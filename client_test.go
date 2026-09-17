@@ -9,7 +9,7 @@ import (
 	"go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp"
 
 	"github.com/caarlos0/env/v11"
-	"github.com/pbrpc/connect-testing/mocks/roundtripper"
+	"github.com/pbrpc/testing/mocks/roundtripper"
 )
 
 func TestFromEnv(t *testing.T) {
