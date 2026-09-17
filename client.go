@@ -3,18 +3,11 @@ package httpclient
 
 import (
 	"net/http"
-	"time"
 
-	"github.com/caarlos0/env/v11"
 	"go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp"
 
 	transport "github.com/pbrpc/http-transport"
 )
-
-type configuration struct {
-	SendPingTimeout time.Duration `env:"HTTP2_SEND_PING_TIMEOUT" envDefault:"2m"`
-	PingTimeout     time.Duration `env:"HTTP2_PING_TIMEOUT" envDefault:"20s"`
-}
 
 // FromEnv creates an HTTP client with OpenTelemetry trace propagation. A nil
 // base selects the standard cleartext HTTP/2 transport configured by
@@ -33,8 +26,4 @@ func FromEnv(base http.RoundTripper) (*http.Client, error) {
 	}
 
 	return &http.Client{Transport: otelhttp.NewTransport(base)}, nil
-}
-
-func configurationFromEnv() (configuration, error) {
-	return env.ParseAs[configuration]()
 }
