@@ -8,6 +8,7 @@ import (
 
 	"go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp"
 
+	"github.com/caarlos0/env/v11"
 	"github.com/pbrpc/connect-testing/mocks/roundtripper"
 )
 
@@ -16,7 +17,7 @@ func TestFromEnv(t *testing.T) {
 		t.Setenv("HTTP2_SEND_PING_TIMEOUT", "3m")
 		t.Setenv("HTTP2_PING_TIMEOUT", "30s")
 
-		configured, err := configurationFromEnv()
+		configured, err := env.ParseAs[configuration]()
 		if err != nil {
 			t.Fatalf("unexpected error: %v", err)
 		}

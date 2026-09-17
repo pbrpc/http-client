@@ -6,6 +6,7 @@ import (
 
 	"go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp"
 
+	"github.com/caarlos0/env/v11"
 	transport "github.com/pbrpc/http-transport"
 )
 
@@ -14,7 +15,7 @@ import (
 // HTTP2_SEND_PING_TIMEOUT and HTTP2_PING_TIMEOUT.
 func FromEnv(base http.RoundTripper) (*http.Client, error) {
 	if base == nil {
-		configured, err := configurationFromEnv()
+		configured, err := env.ParseAs[configuration]()
 		if err != nil {
 			return nil, err
 		}
