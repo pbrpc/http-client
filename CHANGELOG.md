@@ -2,6 +2,15 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## 0.1.1 - 2026-09-17
+#### Bug Fixes
+- replace connect-testing with generic testing module - (7a546a6) - Nathan Blair
+#### Miscellaneous Chores
+- remove unnecessary helper - (f0a277d) - Nathan Blair
+- break up files - (981489a) - Nathan Blair
+
+- - -
+
 ## 0.1.0 - 2026-09-17
 #### Features
 - initial release - (4ede6ad) - Nathan Blair
